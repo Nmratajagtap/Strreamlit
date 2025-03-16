@@ -27,3 +27,18 @@ sepal_length = st.slider("Sepal Length (cm)", float(df['sepal length (cm)'].min(
 sepal_width = st.slider("Sepal Width (cm)", float(df['sepal width (cm)'].min()), float(df['sepal width (cm)'].max()), float(df['sepal width (cm)'].mean()))
 petal_length = st.slider("Petal Length (cm)", float(df['petal length (cm)'].min()), float(df['petal length (cm)'].max()), float(df['petal length (cm)'].mean()))
 petal_width = st.slider("Petal Width (cm)", float(df['petal width (cm)'].min()), float(df['petal width (cm)'].max()), float(df['petal width (cm)'].mean()))
+
+# Predict species
+features = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
+prediction = model.predict(features)[0]
+prediction_proba = model.predict_proba(features)
+
+st.write(f"### Predicted Species: *{prediction.capitalize()}*")
+st.write("### Prediction Probabilities:")
+st.write(f"Setosa: {prediction_proba[0][0]:.2f}, Versicolor: {prediction_proba[0][1]:.2f}, Virginica: {prediction_proba[0][2]:.2f}")
+
+st.write("#### About the App:")
+st.write("This app uses Multinomial Logistic Regression (Softmax) trained on the Iris dataset to classify iris flowers into three species: Setosa, Versicolor, and Virginica.")
+
+st.write("Made by Namu 😀")
+
