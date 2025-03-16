@@ -51,5 +51,5 @@ st.write(f"Setosa: {prediction_proba[0][0]:.2f}, Versicolor: {prediction_proba[0
 st.write("#### About the App:")
 st.write("This app uses Multinomial Logistic Regression (Softmax) trained on the Iris dataset to classify iris flowers into three species: Setosa, Versicolor, and Virginica.")
 
-st.write("Made by Sharad 😀")
+st.write("Made by Namu 😀")
 
